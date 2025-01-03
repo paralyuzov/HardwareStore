@@ -1,0 +1,11 @@
+@import './base.css';
+body {
+  background-color: rgb(206, 206, 206);
+}
+
+#app {
+  max-width: 1440px;
+  margin: 0 auto;
+  font-weight: normal;
+}
+

@@ -1,0 +1,2 @@
+# HardwareStore
+Vue Softuni Project

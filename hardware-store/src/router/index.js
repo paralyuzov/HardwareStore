@@ -1,4 +1,6 @@
 
+import CpuDetails from "@/views/CpuDetails.vue";
+import CpuPage from "@/views/CpuPage.vue";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
@@ -19,6 +21,17 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/catalog/cpu",
+    name: "CPU",
+    component: CpuPage,
+  },
+  {
+    path: "/catalog/cpu/:id",
+    name: "CpuDetails",
+    component: CpuDetails,
+    props: true,
   },
 
 ];

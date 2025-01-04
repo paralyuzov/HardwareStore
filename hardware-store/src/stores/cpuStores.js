@@ -12,8 +12,8 @@ export const useCpuStore = defineStore("cpuStore", {
       this.loading = true;
       this.error = null;
       try {
-        const response = await axios.get("/api/cpus");
-        this.cpus = response.data; 
+        const response = await axios.get("/cpu");
+        this.cpus = response.data;
       } catch (error) {
         this.error = error.response?.data?.error || "Failed to fetch CPUs";
         console.error("Error fetching CPUs:", error);

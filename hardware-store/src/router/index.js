@@ -10,6 +10,8 @@ import RamPage from "@/views/RamPage.vue";
 import Register from "@/views/Register.vue";
 import SsdDetails from "@/views/SsdDetails.vue";
 import SsdPage from "@/views/SsdPage.vue";
+import VideoCardDetails from "@/views/VideoCardDetails.vue";
+import VideoCardPage from "@/views/VideoCardPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -68,6 +70,16 @@ const routes = [
     path: "/catalog/ssd/:id",
     name: "SsdDetails",
     component: SsdDetails,
+  },
+  {
+    path: "/catalog/videocard",
+    name: "VideoCards",
+    component: VideoCardPage,
+  },
+  {
+    path: "/catalog/videocard/:id",
+    name: "VideoCardsDetails",
+    component: VideoCardDetails,
   },
 
 ];

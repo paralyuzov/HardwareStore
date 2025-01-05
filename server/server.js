@@ -7,8 +7,9 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const cpuRoutes = require("./routes/cpu");
 const ramRoutes = require("./routes/ram");
-const motherboardRoutes = require('./routes/motherboards')
-const ssdRoutes = require('./routes/ssd')
+const motherboardRoutes = require('./routes/motherboards');
+const ssdRoutes = require('./routes/ssd');
+const videoCardRoutes = require('./routes/videoCards')
 
 
 dotenv.config();
@@ -35,6 +36,7 @@ app.use("/api/cpu",cpuRoutes);
 app.use("/api/ram",ramRoutes);
 app.use('/api/motherboards',motherboardRoutes);
 app.use('/api/ssd',ssdRoutes);
+app.use('/api/videocards',videoCardRoutes);
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

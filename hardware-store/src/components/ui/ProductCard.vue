@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "CpuCard",
+  name: "ProductCard",
   props: {
     id: {
       type: String,
@@ -9,6 +9,10 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    type:{
+      type:String,
+      required:true
     },
     price: {
       type: Number,
@@ -22,7 +26,7 @@ export default {
   },
   methods: {
     navigateToDetails() {
-      this.$router.push(`/catalog/cpu/${this.id}`);
+      this.$router.push(`/catalog/${this.type}/${this.id}`);
     }
 
   }

@@ -3,6 +3,8 @@ import CpuDetails from "@/views/CpuDetails.vue";
 import CpuPage from "@/views/CpuPage.vue";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
+import RamDetails from "@/views/RamDetails.vue";
+import RamPage from "@/views/RamPage.vue";
 import Register from "@/views/Register.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -32,6 +34,16 @@ const routes = [
     name: "CpuDetails",
     component: CpuDetails,
     props: true,
+  },
+  {
+    path: "/catalog/ram",
+    name: "RAM",
+    component: RamPage,
+  },
+  {
+    path: "/catalog/ram/:id",
+    name: "RamDetails",
+    component: RamDetails,
   },
 
 ];

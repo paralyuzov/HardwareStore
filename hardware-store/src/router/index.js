@@ -3,6 +3,8 @@ import CpuDetails from "@/views/CpuDetails.vue";
 import CpuPage from "@/views/CpuPage.vue";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
+import MotherboardDetails from "@/views/MotherboardDetails.vue";
+import MotherboardPage from "@/views/MotherboardPage.vue";
 import RamDetails from "@/views/RamDetails.vue";
 import RamPage from "@/views/RamPage.vue";
 import Register from "@/views/Register.vue";
@@ -44,6 +46,16 @@ const routes = [
     path: "/catalog/ram/:id",
     name: "RamDetails",
     component: RamDetails,
+  },
+  {
+    path: "/catalog/motherboard",
+    name: "Motherboards",
+    component: MotherboardPage,
+  },
+  {
+    path: "/catalog/motherboard/:id",
+    name: "MotherboardsDetails",
+    component: MotherboardDetails,
   },
 
 ];

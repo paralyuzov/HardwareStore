@@ -7,8 +7,8 @@ export default {
     const authStore = useAuthStore();
 
     const user = computed(() => authStore.user);
-    const isLoggedIn = computed(() => !!authStore.user); // User is logged in if user exists
-    const isAdmin = computed(() => authStore.user?.roles.includes("admin")); // Check if user is admin
+    const isLoggedIn = computed(() => !!authStore.user);
+    const isAdmin = computed(() => authStore.user?.roles.includes("admin"));
 
     const handleLogout = () => {
       authStore.logout();
@@ -48,7 +48,9 @@ export default {
               CPU
             </router-link>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Motherboards</a>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">RAM</a>
+            <router-link to="/catalog/ram" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+              RAM
+            </router-link>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">SSD</a>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Video Cards</a>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Accessories</a>

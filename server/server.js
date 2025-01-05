@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const cpuRoutes = require("./routes/cpu");
+const ramRoutes = require("./routes/ram");
+const motherboardRoutes = require('./routes/motherboards')
 
 
 dotenv.config();
@@ -29,6 +31,8 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/cpu",cpuRoutes);
+app.use("/api/ram",ramRoutes);
+app.use('/api/motherboards',motherboardRoutes);
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

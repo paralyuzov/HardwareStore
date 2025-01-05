@@ -1,12 +1,12 @@
 <script>
 import { onBeforeMount } from "vue";
 import { useCpuStore } from "@/stores/cpuStores";
-import CpuCard from "@/components/ui/CpuCard.vue";
+import ProductCard from "@/components/ui/ProductCard.vue";
 
 export default {
   name: "CpuPage",
   components: {
-    CpuCard,
+  ProductCard
   },
   setup() {
     const cpuStore = useCpuStore();
@@ -29,10 +29,11 @@ export default {
         <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
       </div>
       <div v-if="cpuStore.cpus.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <CpuCard
+        <ProductCard
           v-for="cpu in cpuStore.cpus"
           :key="cpu._id"
           :id="cpu._id"
+          :type="'cpu'"
           :name="cpu.name"
           :price="cpu.price"
           :image="cpu.image"

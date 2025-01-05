@@ -47,13 +47,15 @@ export default {
             <router-link to="/catalog/cpu" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               CPU
             </router-link>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Motherboards</a>
+            <router-link to="/catalog/motherboard" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+              Motherboards
+            </router-link>
             <router-link to="/catalog/ram" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               RAM
             </router-link>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">SSD</a>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Video Cards</a>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Accessories</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">PSU</a>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 const express = require("express");
-const VideoCard = require("../models/videoCardSchema");
+const VideoCard = require("../models/VideoCard");
 const router = express.Router();
 
 router.get("/", async (req, res) => {

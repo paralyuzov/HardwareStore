@@ -5,6 +5,8 @@ import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import MotherboardDetails from "@/views/MotherboardDetails.vue";
 import MotherboardPage from "@/views/MotherboardPage.vue";
+import PsuDetails from "@/views/PsuDetails.vue";
+import PsuPage from "@/views/PsuPage.vue";
 import RamDetails from "@/views/RamDetails.vue";
 import RamPage from "@/views/RamPage.vue";
 import Register from "@/views/Register.vue";
@@ -80,6 +82,16 @@ const routes = [
     path: "/catalog/videocard/:id",
     name: "VideoCardsDetails",
     component: VideoCardDetails,
+  },
+  {
+    path: "/catalog/psu",
+    name: "PSU",
+    component: PsuPage,
+  },
+  {
+    path: "/catalog/psu/:id",
+    name: "PsuDetails",
+    component: PsuDetails,
   },
 
 ];

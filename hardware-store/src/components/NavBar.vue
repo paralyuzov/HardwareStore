@@ -56,7 +56,9 @@ export default {
             <router-link to="/catalog/ssd" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               SSD
             </router-link>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Video Cards</a>
+            <router-link to="/catalog/videocard" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+              Video Cards
+            </router-link>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">PSU</a>
           </div>
         </div>

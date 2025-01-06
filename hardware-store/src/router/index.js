@@ -2,6 +2,8 @@
 import CpuDetails from "@/views/CpuDetails.vue";
 import CpuPage from "@/views/CpuPage.vue";
 import Home from "@/views/Home.vue";
+import LaptopDetails from "@/views/LaptopDetails.vue";
+import LaptopPage from "@/views/LaptopPage.vue";
 import Login from "@/views/Login.vue";
 import MotherboardDetails from "@/views/MotherboardDetails.vue";
 import MotherboardPage from "@/views/MotherboardPage.vue";
@@ -92,6 +94,16 @@ const routes = [
     path: "/catalog/psu/:id",
     name: "PsuDetails",
     component: PsuDetails,
+  },
+  {
+    path: "/catalog/laptop",
+    name: "Laptops",
+    component: LaptopPage,
+  },
+  {
+    path: "/catalog/laptop/:id",
+    name: "LaptopsDetails",
+    component: LaptopDetails,
   },
 
 ];

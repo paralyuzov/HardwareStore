@@ -7,23 +7,28 @@ export const useAuthStore = defineStore('authStore', {
     error: null,
     loading: false,
   }),
+  getters: {
+    isLoggedIn: (state) => !!state.user,
+    isAdmin: (state) => state.user?.roles?.includes('admin'),
+  },
   actions: {
     async initializeSession() {
-      this.loading = true;
+      this.loading = true
+      this.error = null
+
       try {
-        const response = await axios.get("/auth/validate");
-        this.user = response.data.user;
+        const response = await axios.get('/auth/validate')
+        this.user = response.data.user
       } catch (error) {
-        this.user = null;
-        console.error("Session validation failed:", error);
+        console.error('Session validation failed:', error)
+        this.user = null
       } finally {
-        this.loading = false;
+        this.loading = false
       }
     },
     async registerUser(userData) {
       this.loading = true
       this.error = null
-
       try {
         const response = await axios.post('/auth/register', userData)
         this.user = response.data
@@ -38,7 +43,6 @@ export const useAuthStore = defineStore('authStore', {
     async loginUser(credentials) {
       this.loading = true
       this.error = null
-
       try {
         const response = await axios.post('/auth/login', credentials)
         this.user = response.data.user
@@ -48,16 +52,14 @@ export const useAuthStore = defineStore('authStore', {
         throw this.error
       } finally {
         this.loading = false
-        console.log(this.user)
       }
     },
     async logout() {
       try {
-        await axios.post("/auth/logout");
-        this.user = null;
+        await axios.post('/auth/logout')
+        this.user = null
       } catch (error) {
-        console.error("Logout failed:", error);
-        throw new Error("Failed to log out");
+        console.error('Logout failed:', error)
       }
     },
   },

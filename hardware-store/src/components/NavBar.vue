@@ -43,7 +43,9 @@ export default {
             PRODUCTS
           </a>
           <div class="absolute hidden group-hover:block -right-20 pt-1 w-48 border bg-white rounded-md shadow-lg z-50">
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Laptops</a>
+            <router-link to="/catalog/laptop" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+              Laptops
+            </router-link>
             <router-link to="/catalog/cpu" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               CPU
             </router-link>

@@ -27,7 +27,7 @@ export default {
 <template>
   <nav class="bg-white shadow-md">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="/" class="text-2xl font-bold text-gray-800 font-orbitron">HardwareStore</a>
+      <router-link to="/" class="text-2xl font-bold text-gray-800 font-orbitron">HardwareStore</router-link>
 
       <div class="hidden md:flex items-center space-x-4">
         <input type="text" placeholder="Search for products..."
@@ -39,9 +39,9 @@ export default {
 
       <div class="flex items-center space-x-10 font-serif">
         <div class="relative group">
-          <a href="#" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+          <p class="text-gray-700 hover:text-gray-900 focus:outline-none cursor-pointer">
             PRODUCTS
-          </a>
+          </p>
           <div class="absolute hidden group-hover:block -right-20 pt-1 w-48 border bg-white rounded-md shadow-lg z-50">
             <router-link to="/catalog/laptop" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Laptops
@@ -77,9 +77,9 @@ export default {
             <span>Guest</span>
           </div>
           <div class="absolute hidden group-hover:block -right-20 pt-1 border w-48 bg-white rounded-md shadow-lg z-50">
-            <a v-if="isAdmin" href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+            <router-link v-if="isAdmin" to="/admin" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Admin Panel
-            </a>
+            </router-link>
             <a v-if="isLoggedIn" href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Orders
             </a>

@@ -1,5 +1,6 @@
 const CPU = require("../models/CPU");
 const express = require('express');
+const checkAdmin = require("../middleware/checkAdmin");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -11,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/",checkAdmin, async (req, res) => {
   const cpuData = req.body;
 
   try {
@@ -34,7 +35,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", checkAdmin, async (req, res) => {
   try {
     const updatedCPU = await CPU.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -49,7 +50,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", checkAdmin, async (req, res) => {
   try {
     const deletedCPU = await CPU.findByIdAndDelete(req.params.id);
     if (!deletedCPU) {

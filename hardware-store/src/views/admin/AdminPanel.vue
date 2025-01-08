@@ -38,6 +38,11 @@ export default {
         image: new URL("@/assets/powersupply.png", import.meta.url).href,
         route: "/admin/psus",
       },
+      {
+        name: "Users",
+        image: new URL("@/assets/users.png", import.meta.url).href,
+        route: "/admin/users",
+      }
     ];
 
     return {

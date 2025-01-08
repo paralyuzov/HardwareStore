@@ -3,7 +3,7 @@ export default {
   name: "DropdownField",
   props: {
     modelValue: {
-      type: String,
+      type: [String,Array],
       required: true,
     },
     label: {

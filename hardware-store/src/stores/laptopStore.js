@@ -6,6 +6,7 @@ export const useLaptopStore = defineStore('laptopStore', {
     laptops: [],
     error: null,
     loading: false,
+    selectedLaptop:null
   }),
   actions: {
     async fetchLaptops() {
@@ -54,5 +55,19 @@ export const useLaptopStore = defineStore('laptopStore', {
         throw error
       }
     },
+    async fetchLaptopById(id) {
+      this.loading = true;
+      this.error = null;
+      try {
+        const response = await axios.get(`/laptops/${id}`);
+        this.selectedLaptop = response.data;
+      } catch (error) {
+        this.error = error.response?.data?.error || "Failed to fetch laptop details";
+        console.error("Error fetching laptop details:", error);
+        throw error;
+      } finally {
+        this.loading = false;
+      }
+    }
   },
 })

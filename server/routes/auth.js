@@ -1,6 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const checkAdmin = require("../middleware/checkAdmin");
 
 const router = express.Router();
 
@@ -43,7 +44,7 @@ router.post("/register", async (req, res) => {
     try {
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(404).json({ error: "User not found" });
+        return res.status(404).json({ error: "Invalid email or password!" });
       }
   
       const isPasswordValid = await user.comparePassword(password);
@@ -168,6 +169,63 @@ router.put("/edit", async (req, res) => {
   } catch (error) {
     console.error("Error updating profile:", error);
     res.status(500).json({ error: "Failed to update profile" });
+  }
+});
+
+router.get("/admin/users", checkAdmin, async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "Failed to fetch users" });
+  }
+});
+
+router.put('/admin/edit/:id', checkAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { username, email, roles } = req.body;
+
+    const existingEmailUser = await User.findOne({ email });
+    if (existingEmailUser && existingEmailUser._id.toString() !== id) {
+      return res.status(400).json({ error: "Email already in use by another user" });
+    }
+
+    const user = await User.findByIdAndUpdate(
+      id,
+      { username, email, roles },
+      { new: true, runValidators: true }
+    );
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json({ user });
+    console.log(user)
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ error: 'Failed to update user' });
+  }
+});
+
+router.delete("/admin/delete/:id", checkAdmin, async (req, res) => {
+  const { id } = req.params;
+  if (!id) {
+    return res.status(400).json({ error: "User ID is required" });
+  }
+
+  try {
+    const user = await User.findByIdAndDelete(id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    res.status(500).json({ error: "Failed to delete user" });
   }
 });
 

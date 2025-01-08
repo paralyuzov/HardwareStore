@@ -6,6 +6,7 @@ export const useMotherboardStore = defineStore("motherboardStore", {
     motherboards: [],
     error: null,
     loading: false,
+    selectedMotherboard:null
   }),
   actions: {
     async fetchMotherboards() {
@@ -61,5 +62,19 @@ export const useMotherboardStore = defineStore("motherboardStore", {
         throw error;
       }
     },
+    async fetchMotherboardById(id) {
+      this.loading = true;
+      this.error = null;
+      try {
+        const response = await axios.get(`/motherboards/${id}`);
+        this.selectedMotherboard = response.data;
+      } catch (error) {
+        this.error = error.response?.data?.error || "Failed to fetch motherboard details";
+        console.error("Error fetching motherboard details:", error);
+        throw error;
+      } finally {
+        this.loading = false;
+      }
+    }
   },
 });

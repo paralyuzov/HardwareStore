@@ -1,11 +1,13 @@
 <script>
-import {  onBeforeMount, computed } from "vue";
+import { onBeforeMount, computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import { usePsuStore } from "@/stores/psuStore";
 import { useCartStore } from "@/stores/cartStore";
+import MessageModal from "@/components/ui/MessageModal.vue";
 
 export default {
   name: "PsuDetails",
+  components: { MessageModal },
   setup() {
     const route = useRoute();
     const psuStore = usePsuStore();
@@ -14,6 +16,9 @@ export default {
     const psu = computed(() => psuStore.selectedPsu);
     const loading = computed(() => psuStore.loading);
     const error = computed(() => psuStore.error);
+
+    const isModalVisible = ref(false);
+    const modalMessage = ref("");
 
     const fetchPsuDetails = async () => {
       try {
@@ -36,9 +41,13 @@ export default {
             id: psu.value._id,
             name: psu.value.name,
             price: psu.value.price,
+            image: psu.value.image,
             quantity: 1,
           });
         }
+        
+        modalMessage.value = `${psu.value.name} has been added to your cart.`;
+        isModalVisible.value = true;
       }
     };
 
@@ -49,6 +58,8 @@ export default {
       loading,
       error,
       addToCart,
+      isModalVisible,
+      modalMessage,
     };
   },
 };
@@ -106,5 +117,12 @@ export default {
         </div>
       </div>
     </div>
+
+    <MessageModal
+      :visible="isModalVisible"
+      :message="modalMessage"
+      type="success"
+      @close="isModalVisible = false"
+    />
   </div>
 </template>

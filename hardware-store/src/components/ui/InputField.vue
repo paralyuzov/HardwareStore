@@ -25,6 +25,7 @@ export default {
       type: String,
       default: '',
     },
+    min: { type: [Number, String], default: null }
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
@@ -48,6 +49,7 @@ export default {
       :id="id"
       :type="type"
       :value="modelValue"
+      :min="min"
       @input="updateValue($event.target.value)"
       :placeholder="placeholder"
       :class="[

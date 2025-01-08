@@ -6,6 +6,7 @@ export const usePsuStore = defineStore("psuStore", {
     psus: [],
     error: null,
     loading: false,
+    selectedPsu:null,
   }),
   actions: {
     async fetchPsus() {

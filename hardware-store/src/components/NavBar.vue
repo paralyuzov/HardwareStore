@@ -1,17 +1,17 @@
 <script>
 import { computed } from "vue";
 import { useAuthStore } from "@/stores/authStore";
-import { useCartStore } from "@/stores/cartStore"; // Assuming you have a cart store
+import { useCartStore } from "@/stores/cartStore";
 
 export default {
   setup() {
     const authStore = useAuthStore();
-    const cartStore = useCartStore(); // Cart Store for tracking cart items
+    const cartStore = useCartStore();
 
     const user = computed(() => authStore.user);
     const isLoggedIn = computed(() => !!authStore.user);
     const isAdmin = computed(() => authStore.user?.roles.includes("admin"));
-    const cartItemCount = computed(() => cartStore.cartItems.length); // Track cart items count
+    const cartItemCount = computed(() => cartStore.cartItems.length);
 
     const handleLogout = () => {
       authStore.logout();
@@ -88,9 +88,9 @@ export default {
             <router-link v-if="isLoggedIn" to="/orders" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Orders
             </router-link>
-            <a v-if="isLoggedIn" href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-              Settings
-            </a>
+            <router-link v-if="isLoggedIn" to="/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+              Profile
+            </router-link>
             <a v-else href="/login" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Login
             </a>

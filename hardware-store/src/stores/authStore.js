@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia'
 import axios from '../services/api'
+import { useCartStore } from './cartStore'
 
 export const useAuthStore = defineStore('authStore', {
   state: () => ({
     user: null,
     error: null,
     loading: false,
+    orders:[],
   }),
   getters: {
     isLoggedIn: (state) => !!state.user,
@@ -57,9 +59,33 @@ export const useAuthStore = defineStore('authStore', {
     async logout() {
       try {
         await axios.post('/auth/logout')
-        this.user = null
+        this.user = null;
+        this.orders = [];
+        const cart = useCartStore();
+        cart.clearCart();
       } catch (error) {
         console.error('Logout failed:', error)
+      }
+    },
+    async fetchOrders() {
+      if (!this.user) {
+        this.error = 'User not logged in';
+        return;
+      }
+      this.loading = true;
+      this.error = null;
+
+      try {
+        const response = await axios.post('/users/orders', {
+          userId: this.user.id,
+        });
+        this.orders = response.data;
+      } catch (error) {
+        console.error('Error fetching orders:', error);
+        this.error = error.response?.data?.error || 'Failed to fetch orders';
+        throw this.error;
+      } finally {
+        this.loading = false;
       }
     },
   },

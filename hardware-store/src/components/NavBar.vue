@@ -1,14 +1,17 @@
 <script>
 import { computed } from "vue";
 import { useAuthStore } from "@/stores/authStore";
+import { useCartStore } from "@/stores/cartStore"; // Assuming you have a cart store
 
 export default {
   setup() {
     const authStore = useAuthStore();
+    const cartStore = useCartStore(); // Cart Store for tracking cart items
 
     const user = computed(() => authStore.user);
     const isLoggedIn = computed(() => !!authStore.user);
     const isAdmin = computed(() => authStore.user?.roles.includes("admin"));
+    const cartItemCount = computed(() => cartStore.cartItems.length); // Track cart items count
 
     const handleLogout = () => {
       authStore.logout();
@@ -18,6 +21,7 @@ export default {
       user,
       isLoggedIn,
       isAdmin,
+      cartItemCount,
       handleLogout,
     };
   },
@@ -38,6 +42,7 @@ export default {
       </div>
 
       <div class="flex items-center space-x-10 font-serif">
+
         <div class="relative group">
           <p class="text-gray-700 hover:text-gray-900 focus:outline-none cursor-pointer">
             PRODUCTS
@@ -94,6 +99,14 @@ export default {
               Logout
             </button>
           </div>
+        </div>
+        <div class="relative group bg-sky-100 p-2 rounded-full">
+          <router-link to="/cart" class="flex items-center space-x-2 cursor-pointer">
+            <i class="fa-solid fa-cart-shopping text-gray-700 hover:scale-105"></i>
+            <div v-if="cartItemCount > 0" class="absolute top-5 left-5 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+              {{ cartItemCount }}
+            </div>
+          </router-link>
         </div>
       </div>
     </div>

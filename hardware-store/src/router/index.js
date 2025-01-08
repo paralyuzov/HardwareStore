@@ -30,6 +30,7 @@ import AdminVideoCardsPage from '@/views/admin/AdminVideoCardsPage.vue'
 import AdminPsuPage from '@/views/admin/AdminPsuPage.vue'
 import CartPage from '@/views/CartPage.vue'
 import OrdersPage from '@/views/OrdersPage.vue'
+import ProfilePage from '@/views/ProfilePage.vue'
 
 const routes = [
   {
@@ -59,6 +60,12 @@ const routes = [
     path: '/orders',
     name: 'Orders',
     component: OrdersPage,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: ProfilePage,
     meta: { requiresAuth: true },
   },
 

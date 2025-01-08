@@ -88,5 +88,32 @@ export const useAuthStore = defineStore('authStore', {
         this.loading = false;
       }
     },
+    async editUser(updatedData) {
+      if (!this.user) {
+        this.error = 'User not logged in';
+        return;
+      }
+      this.loading = true;
+      this.error = null;
+
+      try {
+        const response = await axios.put('/auth/edit', updatedData, {
+          withCredentials: true,
+        });
+
+        this.user = {
+          ...this.user,
+          ...response.data.user,
+        };
+
+        return response.data.user;
+      } catch (error) {
+        console.error('Error updating profile:', error);
+        this.error = error.response?.data?.error || 'Failed to update profile';
+        throw this.error;
+      } finally {
+        this.loading = false;
+      }
+    },
   },
 })

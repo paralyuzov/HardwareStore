@@ -1,5 +1,6 @@
 const express = require("express");
 const SSD = require("../models/SSD");
+const validateObjectId = require("../middleware/validateObjectId");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -13,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   try {
     const ssd = await SSD.findById(req.params.id);
     if (!ssd) {

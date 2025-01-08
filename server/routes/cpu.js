@@ -1,6 +1,7 @@
 const CPU = require("../models/CPU");
 const express = require('express');
 const checkAdmin = require("../middleware/checkAdmin");
+const validateObjectId = require("../middleware/validateObjectId");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -23,7 +24,7 @@ router.post("/",checkAdmin, async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   try {
     const cpu = await CPU.findById(req.params.id);
     if (!cpu) {

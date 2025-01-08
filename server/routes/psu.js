@@ -1,5 +1,6 @@
 const express = require("express");
 const PSU = require("../models/PSU");
+const validateObjectId = require("../middleware/validateObjectId");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -12,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   try {
     const psu = await PSU.findById(req.params.id);
     if (!psu) {

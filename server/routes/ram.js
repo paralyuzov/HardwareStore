@@ -1,5 +1,6 @@
 const express = require("express");
 const RAM = require("../models/RAM");
+const validateObjectId = require("../middleware/validateObjectId");
 const router = express.Router();
 
 
@@ -13,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateObjectId, async (req, res) => {
   try {
     const ram = await RAM.findById(req.params.id);
     if (!ram) {

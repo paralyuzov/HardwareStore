@@ -7,7 +7,8 @@ export const useAuthStore = defineStore('authStore', {
     user: null,
     error: null,
     loading: false,
-    orders:[],
+    orders: [],
+    adminUsers: [],
   }),
   getters: {
     isLoggedIn: (state) => !!state.user,
@@ -32,9 +33,7 @@ export const useAuthStore = defineStore('authStore', {
       this.loading = true
       this.error = null
       try {
-        const response = await axios.post('/auth/register', userData)
-        this.user = response.data
-        return response.data
+        await axios.post('/auth/register', userData)
       } catch (error) {
         this.error = error.response?.data?.error || 'Registration failed'
         throw this.error
@@ -59,60 +58,129 @@ export const useAuthStore = defineStore('authStore', {
     async logout() {
       try {
         await axios.post('/auth/logout')
-        this.user = null;
-        this.orders = [];
-        const cart = useCartStore();
-        cart.clearCart();
+        this.user = null
+        this.orders = []
+        const cart = useCartStore()
+        cart.clearCart()
       } catch (error) {
         console.error('Logout failed:', error)
       }
     },
     async fetchOrders() {
       if (!this.user) {
-        this.error = 'User not logged in';
-        return;
+        this.error = 'User not logged in'
+        return
       }
-      this.loading = true;
-      this.error = null;
+      this.loading = true
+      this.error = null
 
       try {
         const response = await axios.post('/users/orders', {
           userId: this.user.id,
-        });
-        this.orders = response.data;
+        })
+        this.orders = response.data
       } catch (error) {
-        console.error('Error fetching orders:', error);
-        this.error = error.response?.data?.error || 'Failed to fetch orders';
-        throw this.error;
+        console.error('Error fetching orders:', error)
+        this.error = error.response?.data?.error || 'Failed to fetch orders'
+        throw this.error
       } finally {
-        this.loading = false;
+        this.loading = false
       }
     },
     async editUser(updatedData) {
       if (!this.user) {
-        this.error = 'User not logged in';
-        return;
+        this.error = 'User not logged in'
+        return
       }
-      this.loading = true;
-      this.error = null;
+      this.loading = true
+      this.error = null
 
       try {
         const response = await axios.put('/auth/edit', updatedData, {
           withCredentials: true,
-        });
+        })
 
         this.user = {
           ...this.user,
           ...response.data.user,
-        };
+        }
 
-        return response.data.user;
+        return response.data.user
       } catch (error) {
-        console.error('Error updating profile:', error);
-        this.error = error.response?.data?.error || 'Failed to update profile';
-        throw this.error;
+        console.error('Error updating profile:', error)
+        this.error = error.response?.data?.error || 'Failed to update profile'
+        throw this.error
       } finally {
-        this.loading = false;
+        this.loading = false
+      }
+    },
+    async fetchUsers() {
+      if (!this.isAdmin) {
+        this.error = 'Unauthorized. Admins only.'
+        return
+      }
+      this.loading = true
+      this.error = null
+
+      try {
+        const response = await axios.get('/auth/admin/users', {
+          withCredentials: true,
+        })
+        this.adminUsers = response.data.filter((user) => user._id !== this.user.id)
+      } catch (error) {
+        console.error('Error fetching users:', error)
+        this.error = error.response?.data?.error || 'Failed to fetch users'
+        throw this.error
+      } finally {
+        this.loading = false
+      }
+    },
+
+    async adminEditUser(userId, updatedData) {
+      if (!this.isAdmin) {
+        this.error = 'Unauthorized. Admins only.'
+        return
+      }
+      this.loading = true
+      this.error = null
+      console.log(updatedData)
+      try {
+        const response = await axios.put(`/auth/admin/edit/${userId}`, updatedData, {
+          withCredentials: true,
+        })
+        const index = this.adminUsers.findIndex((user) => user._id === userId)
+        if (index !== -1) {
+          this.adminUsers[index] = response.data.user
+        }
+        return response.data.user
+      } catch (error) {
+        console.error('Error editing user:', error)
+        this.error = error.response?.data?.error || 'Failed to edit user'
+        throw this.error
+      } finally {
+        this.loading = false
+      }
+    },
+
+    async adminDeleteUser(userId) {
+      if (!this.isAdmin) {
+        this.error = 'Unauthorized. Admins only.'
+        return
+      }
+      this.loading = true
+      this.error = null
+
+      try {
+        await axios.delete(`/auth/admin/delete/${userId}`, {
+          withCredentials: true,
+        })
+        this.adminUsers = this.adminUsers.filter((user) => user._id !== userId)
+      } catch (error) {
+        console.error('Error deleting user:', error)
+        this.error = error.response?.data?.error || 'Failed to delete user'
+        throw this.error
+      } finally {
+        this.loading = false
       }
     },
   },

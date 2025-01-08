@@ -6,6 +6,7 @@ export const useRamStores = defineStore("ramStore", {
     rams: [],
     error: null,
     loading: false,
+    selectedRam:null
   }),
   actions: {
     async fetchRams() {
@@ -54,5 +55,19 @@ export const useRamStores = defineStore("ramStore", {
         throw error
       }
     },
+    async fetchRamById(id) {
+      this.loading = true;
+      this.error = null;
+      try {
+        const response = await axios.get(`/ram/${id}`);
+        this.selectedRam = response.data;
+      } catch (error) {
+        this.error = error.response?.data?.error || "Failed to fetch RAM details";
+        console.error("Error fetching RAM details:", error);
+        throw error;
+      } finally {
+        this.loading = false;
+      }
+    }
   },
 });

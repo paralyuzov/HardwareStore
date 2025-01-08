@@ -6,6 +6,7 @@ export const useCpuStore = defineStore("cpuStore", {
     cpus: [],
     error: null,
     loading: false,
+    selectedCpu:null
   }),
   actions: {
     async fetchCpus() {
@@ -52,6 +53,20 @@ export const useCpuStore = defineStore("cpuStore", {
         this.error = error.response?.data?.error || "Failed to delete CPU";
         console.error("Error deleting CPU:", error);
         throw error;
+      }
+    },
+    async fetchCpuById(id) {
+      this.loading = true;
+      this.error = null;
+      try {
+        const response = await axios.get(`/cpu/${id}`);
+        this.selectedCpu = response.data;
+      } catch (error) {
+        this.error = error.response?.data?.error || "Failed to fetch CPU details";
+        console.error("Error fetching CPU details:", error);
+        throw error;
+      } finally {
+        this.loading = false;
       }
     },
   },

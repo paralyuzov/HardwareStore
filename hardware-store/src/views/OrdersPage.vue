@@ -10,12 +10,14 @@ export default {
     onMounted(() => {
       authStore.fetchOrders();
     });
-    const orders = computed(() => authStore.orders);
+    const sortedOrders = computed(() => {
+      return [...authStore.orders].sort((a, b) => new Date(b.purchaseDate) - new Date(a.purchaseDate));
+    });
     const isLoading = computed(() => authStore.loading);
     const error = computed(() => authStore.error);
 
     return {
-      orders,
+      sortedOrders,
       isLoading,
       error,
     };
@@ -35,7 +37,7 @@ export default {
       <p>{{ error }}</p>
     </div>
 
-    <div v-if="orders.length === 0 && !isLoading && !error" class="text-center text-gray-500">
+    <div v-if="sortedOrders.length === 0 && !isLoading && !error" class="text-center text-gray-500">
       <p class="text-lg">You have no orders yet.</p>
     </div>
 
@@ -50,7 +52,7 @@ export default {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="order in orders" :key="order._id" class="hover:bg-gray-50">
+          <tr v-for="order in sortedOrders" :key="order._id" class="hover:bg-gray-50">
             <td class="px-6 py-4 font-semibold text-gray-700">{{ order.productName }}</td>
             <td class="px-6 py-4">{{ order.quantity }}</td>
             <td class="px-6 py-4 font-semibold text-gray-700">

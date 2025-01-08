@@ -22,6 +22,14 @@ import LaptopDetails from '@/views/LaptopDetails.vue'
 
 import AdminPanel from '@/views/admin/AdminPanel.vue'
 import AdminCpuPage from '@/views/admin/AdminCpuPage.vue'
+import AdminLaptopPage from '@/views/admin/AdminLaptopPage.vue'
+import AdminRamPage from '@/views/admin/AdminRamPage.vue'
+import AdminMotherboardPage from '@/views/admin/AdminMotherboardPage.vue'
+import AdminSSDPage from '@/views/admin/AdminSSDPage.vue'
+import AdminVideoCardsPage from '@/views/admin/AdminVideoCardsPage.vue'
+import AdminPsuPage from '@/views/admin/AdminPsuPage.vue'
+import CartPage from '@/views/CartPage.vue'
+import OrdersPage from '@/views/OrdersPage.vue'
 
 const routes = [
   {
@@ -40,6 +48,18 @@ const routes = [
     name: 'Login',
     component: Login,
     meta: { requiresGuest: true },
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: CartPage,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/orders',
+    name: 'Orders',
+    component: OrdersPage,
+    meta: { requiresAuth: true },
   },
 
   {
@@ -85,6 +105,42 @@ const routes = [
         path: 'cpus',
         name: 'AdminCpuPage',
         component: AdminCpuPage,
+        meta: { requiresAuth: true, requiresAdmin: true },
+      },
+      {
+        path: 'laptops',
+        name: 'AdminLaptopPage',
+        component: AdminLaptopPage,
+        meta: { requiresAuth: true, requiresAdmin: true },
+      },
+      {
+        path: 'rams',
+        name: 'AdminRamsPage',
+        component: AdminRamPage,
+        meta: { requiresAuth: true, requiresAdmin: true },
+      },
+      {
+        path: 'motherboards',
+        name: 'AdminMotherboardsPage',
+        component: AdminMotherboardPage,
+        meta: { requiresAuth: true, requiresAdmin: true },
+      },
+      {
+        path: 'ssds',
+        name: 'AdminSSDsPage',
+        component: AdminSSDPage,
+        meta: { requiresAuth: true, requiresAdmin: true },
+      },
+      {
+        path: 'videocards',
+        name: 'AdminVideoCardsPage',
+        component: AdminVideoCardsPage,
+        meta: { requiresAuth: true, requiresAdmin: true },
+      },
+      {
+        path: 'psus',
+        name: 'AdminPSUsPage',
+        component: AdminPsuPage,
         meta: { requiresAuth: true, requiresAdmin: true },
       },
     ],

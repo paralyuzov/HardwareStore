@@ -1,7 +1,7 @@
 <script>
 import { ref, onBeforeMount } from "vue";
 import { useCpuStore } from "@/stores/cpuStores";
-import CpuForm from "@/components/CpuForm.vue";
+import CpuForm from "@/components/forms/CpuForm.vue";
 import MessageModal from "@/components/ui/MessageModal.vue";
 import ConfirmationModal from "@/components/ui/ConfirmationModal.vue";
 

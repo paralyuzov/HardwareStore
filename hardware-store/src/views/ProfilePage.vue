@@ -17,7 +17,7 @@ export default {
     const handleSave = async (updatedData) => {
       try {
         await authStore.editUser(updatedData);
-        modalMessage.value = 'Settings updated successfully!';
+        modalMessage.value = 'Profile updated successfully!';
         modalType.value = 'success';
       } catch (error) {
         console.log(error)

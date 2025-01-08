@@ -12,6 +12,8 @@ const ssdRoutes = require('./routes/ssd');
 const videoCardRoutes = require('./routes/videoCards');
 const psuRoutes = require('./routes/psu');
 const laptopRoutes = require('./routes/laptops');
+const paymentRoute = require('./routes/stripe');
+const usersRoute = require('./routes/users');
 
 
 dotenv.config();
@@ -41,6 +43,8 @@ app.use('/api/ssd',ssdRoutes);
 app.use('/api/videocards',videoCardRoutes);
 app.use('/api/psu',psuRoutes);
 app.use('/api/laptops',laptopRoutes);
+app.use('/api/checkout',paymentRoute);
+app.use('/api/users',usersRoute)
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -85,9 +85,9 @@ export default {
             <router-link v-if="isAdmin" to="/admin" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Admin Panel
             </router-link>
-            <a v-if="isLoggedIn" href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+            <router-link v-if="isLoggedIn" to="/orders" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Orders
-            </a>
+            </router-link>
             <a v-if="isLoggedIn" href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
               Settings
             </a>

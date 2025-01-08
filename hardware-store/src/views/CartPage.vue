@@ -1,13 +1,21 @@
 <script>
-import { computed } from 'vue';
-import { useCartStore } from '@/stores/cartStore';
+import { computed, ref } from "vue";
+import { useCartStore } from "@/stores/cartStore";
+import InputField from "@/components/ui/InputField.vue";
+import MessageModal from "@/components/ui/MessageModal.vue";
 
 export default {
+  components: {
+    InputField,
+    MessageModal,
+  },
   setup() {
     const cartStore = useCartStore();
-
     const cartItems = computed(() => cartStore.cartItems);
     const totalPrice = computed(() => cartStore.totalPrice);
+    const isModalVisible = ref(false);
+    const modalMessage = ref("");
+    const modalType = ref("error");
 
     const updateQuantity = (id, quantity) => {
       if (quantity < 1) return;
@@ -26,8 +34,9 @@ export default {
       try {
         await cartStore.handlePayment();
       } catch (error) {
-        console.error('Error during payment:', error.message || error);
-        alert('Payment failed. Please try again.');
+        console.error("Error during payment:", error.message || error);
+        modalMessage.value = "Payment failed. Please try again.";
+        isModalVisible.value = true;
       }
     };
 
@@ -38,6 +47,9 @@ export default {
       removeItem,
       clearCart,
       handlePayment,
+      isModalVisible,
+      modalMessage,
+      modalType,
     };
   },
 };
@@ -63,14 +75,26 @@ export default {
         </thead>
         <tbody>
           <tr v-for="item in cartItems" :key="item.id" class="hover:bg-gray-50">
-            <td class="px-6 py-4 font-semibold text-gray-700">{{ item.name }}</td>
+            <td class="px-6 py-4 font-semibold text-gray-700">
+              <div class="flex items-center space-x-4">
+                <img
+                  :src="item.image"
+                  :alt="item.name"
+                  class="w-12 h-12 object-cover rounded-md"
+                />
+                <span>{{ item.name }}</span>
+              </div>
+            </td>
             <td class="px-6 py-4">
-              <input
+              <InputField
+                :id="`quantity-${item.id}`"
+                label=""
                 type="number"
-                :value="item.quantity"
-                @input="updateQuantity(item.id, $event.target.value)"
-                class="w-20 text-center border border-gray-300 rounded-lg"
-                min="1"
+                :modelValue="item.quantity"
+                @update:modelValue="updateQuantity(item.id, $event)"
+                placeholder="Enter quantity"
+                class="w-20"
+                :min="1"
               />
             </td>
             <td class="px-6 py-4 font-semibold text-gray-700">
@@ -109,5 +133,12 @@ export default {
         </div>
       </div>
     </div>
+
+    <MessageModal
+      v-if="isModalVisible"
+      :message="modalMessage"
+      :type="modalType"
+      @close="isModalVisible = false"
+    />
   </div>
 </template>

@@ -1,25 +1,65 @@
 <script>
-import { computed } from "vue";
+import { computed, ref, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 import { useSsdStore } from "@/stores/ssdStores";
+import { useCartStore } from "@/stores/cartStore";
+import MessageModal from "@/components/ui/MessageModal.vue";
 
 export default {
   name: "SsdDetails",
+  components: { MessageModal },
   setup() {
     const route = useRoute();
     const ssdStore = useSsdStore();
+    const cartStore = useCartStore();
 
-    const ssd = computed(() =>
-      ssdStore.ssds.find((ssd) => ssd._id === route.params.id)
-    );
+    const ssd = computed(() => ssdStore.selectedSsd);
+    const loading = computed(() => ssdStore.loading);
+    const error = computed(() => ssdStore.error);
+
+    const isModalVisible = ref(false);
+    const modalMessage = ref("");
+
+    const fetchSsdDetails = async () => {
+      try {
+        await ssdStore.fetchSsdById(route.params.id);
+      } catch (err) {
+        console.error("Error fetching SSD details:", err);
+      }
+    };
 
     const addToCart = () => {
-      console.log(`Added to cart: ${ssd.value.name}`);
+      if (ssd.value) {
+        const existingItem = cartStore.cartItems.find(
+          (item) => item.id === ssd.value._id
+        );
+
+        if (existingItem) {
+          cartStore.updateItemQuantity(ssd.value._id, existingItem.quantity + 1);
+        } else {
+          cartStore.addToCart({
+            id: ssd.value._id,
+            name: ssd.value.name,
+            price: ssd.value.price,
+            image: ssd.value.image,
+            quantity: 1,
+          });
+        }
+
+        modalMessage.value = `${ssd.value.name} has been added to your cart.`;
+        isModalVisible.value = true;
+      }
     };
+
+    onBeforeMount(fetchSsdDetails);
 
     return {
       ssd,
+      loading,
+      error,
       addToCart,
+      isModalVisible,
+      modalMessage,
     };
   },
 };
@@ -28,11 +68,13 @@ export default {
 <template>
   <div class="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
     <div class="container mx-auto px-6 py-12">
-      <div class="flex justify-center">
+      <div v-if="loading" class="text-center text-gray-600">Loading SSD details...</div>
+      <div v-else-if="error" class="text-center text-red-600">{{ error }}</div>
+      <div v-else-if="ssd" class="flex justify-center">
         <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl w-full">
           <div class="flex justify-center mb-6">
             <img
-              v-if="ssd?.image"
+              v-if="ssd.image"
               :src="ssd.image"
               :alt="ssd.name"
               class="w-96 object-cover rounded-lg"
@@ -42,31 +84,31 @@ export default {
           <ul class="text-lg text-gray-700 space-y-4 mb-8">
             <li>
               <span class="font-bold text-gray-800">Name:</span>
-              {{ ssd?.name }}
+              {{ ssd.name }}
             </li>
             <li>
               <span class="font-bold text-gray-800">Type:</span>
-              {{ ssd?.type }}
+              {{ ssd.type }}
             </li>
             <li>
               <span class="font-bold text-gray-800">Capacity:</span>
-              {{ ssd?.capacity }}
+              {{ ssd.capacity }}
             </li>
             <li>
               <span class="font-bold text-gray-800">Interface:</span>
-              {{ ssd?.interface }}
+              {{ ssd.interface }}
             </li>
             <li>
               <span class="font-bold text-gray-800">Read Speed:</span>
-              {{ ssd?.read_speed }}
+              {{ ssd.read_speed }}
             </li>
             <li>
               <span class="font-bold text-gray-800">Write Speed:</span>
-              {{ ssd?.write_speed }}
+              {{ ssd.write_speed }}
             </li>
             <li>
               <span class="font-bold text-gray-800">Price:</span>
-              ${{ ssd?.price.toFixed(2) }}
+              ${{ ssd.price.toFixed(2) }}
             </li>
           </ul>
 
@@ -79,5 +121,12 @@ export default {
         </div>
       </div>
     </div>
+
+    <MessageModal
+      :visible="isModalVisible"
+      :message="modalMessage"
+      type="success"
+      @close="isModalVisible = false"
+    />
   </div>
 </template>

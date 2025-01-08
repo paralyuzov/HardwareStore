@@ -31,6 +31,7 @@ import AdminPsuPage from '@/views/admin/AdminPsuPage.vue'
 import CartPage from '@/views/CartPage.vue'
 import OrdersPage from '@/views/OrdersPage.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
+import AdminUsersPage from '@/views/admin/AdminUsersPage.vue'
 
 const routes = [
   {
@@ -150,6 +151,12 @@ const routes = [
         component: AdminPsuPage,
         meta: { requiresAuth: true, requiresAdmin: true },
       },
+      {
+        path: 'users',
+        name: 'AdminUsersPage',
+        component: AdminUsersPage,
+        meta: { requiresAuth: true, requiresAdmin: true },
+      },
     ],
   },
 ]
@@ -160,25 +167,25 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
-  const authStore = useAuthStore();
+  const authStore = useAuthStore()
 
   if (authStore.loading) {
-    await authStore.initializeSession();
+    await authStore.initializeSession()
   }
 
   if (to.meta.requiresAuth && !authStore.isLoggedIn) {
-    return next({ name: 'Login' });
+    return next({ name: 'Login' })
   }
 
   if (to.meta.requiresAdmin && (!authStore.isLoggedIn || !authStore.isAdmin)) {
-    return next({ name: 'Home' });
+    return next({ name: 'Home' })
   }
 
   if (to.meta.requiresGuest && authStore.isLoggedIn) {
-    return next({ name: 'Home' });
+    return next({ name: 'Home' })
   }
 
-  next();
-});
+  next()
+})
 
 export default router

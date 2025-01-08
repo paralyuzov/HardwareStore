@@ -6,6 +6,7 @@ export const useSsdStore = defineStore("ssdStore", {
     ssds: [],
     error: null,
     loading: false,
+    selectedSSD:null
   }),
   actions: {
     async fetchSsds() {
@@ -54,5 +55,19 @@ export const useSsdStore = defineStore("ssdStore", {
         throw error;
       }
     },
+    async fetchSsdById(id) {
+      this.loading = true;
+      this.error = null;
+      try {
+        const response = await axios.get(`/ssd/${id}`);
+        this.selectedSsd = response.data;
+      } catch (error) {
+        this.error = error.response?.data?.error || "Failed to fetch SSD details";
+        console.error("Error fetching SSD details:", error);
+        throw error;
+      } finally {
+        this.loading = false;
+      }
+    }
   },
 });

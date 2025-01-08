@@ -7,10 +7,9 @@ const orderSchema = new mongoose.Schema({
     required: true,
     refPath: "productType",
   },
-  productType: {
+  productName: {
     type: String,
     required: true,
-    enum: ["CPU", "RAM", "VideoCard", "SSD", "Laptops", "Motherboards", "Accessories"],
   },
   quantity: {
     type: Number,

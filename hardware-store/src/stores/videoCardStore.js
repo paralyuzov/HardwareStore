@@ -21,5 +21,38 @@ export const useVideoCardStore = defineStore("videoCardStore", {
         this.loading = false;
       }
     },
+    async createVideoCard(videoCardData) {
+      try {
+        const response = await axios.post('/videocards', videoCardData);
+        this.videoCards.push(response.data);
+      } catch (error) {
+        this.error = error.response?.data?.error || 'Failed to create Video Card';
+        console.error('Error creating Video Card:', error);
+        throw error;
+      }
+    },
+    async updateVideoCard(id, videoCardData) {
+      try {
+        const response = await axios.put(`/videocards/${id}`, videoCardData);
+        const index = this.videoCards.findIndex((videoCard) => videoCard._id === id);
+        if (index !== -1) {
+          this.videoCards[index] = response.data;
+        }
+      } catch (error) {
+        this.error = error.response?.data?.error || 'Failed to update Video Card';
+        console.error('Error updating Video Card:', error);
+        throw error;
+      }
+    },
+    async deleteVideoCard(id) {
+      try {
+        await axios.delete(`/videocards/${id}`);
+        this.videoCards = this.videoCards.filter((videoCard) => videoCard._id !== id);
+      } catch (error) {
+        this.error = error.response?.data?.error || 'Failed to delete Video Card';
+        console.error('Error deleting Video Card:', error);
+        throw error;
+      }
+    },
   },
 });

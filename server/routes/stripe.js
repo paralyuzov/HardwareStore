@@ -10,8 +10,6 @@ router.post('/', async (req, res) => {
     try {
       const { items,userId } = req.body;
 
-      console.log(items,userId)
-  
       if (!Array.isArray(items) || items.length === 0) {
         return res.status(400).json({ error: 'Invalid or empty items array' });
       }
@@ -19,18 +17,21 @@ router.post('/', async (req, res) => {
       console.log('Items received:', items);
   
       const lineItems = items.map((item) => {
-        if (!item.name || !item.price || !item.quantity) {
+        if (!item.name || !item.price || !item.quantity || !item.image) {
           throw new Error(`Item data missing: ${JSON.stringify(item)}`);
         }
   
         return {
-          price_data: {
-            currency: 'usd',
-            product_data: { name: item.name },
-            unit_amount: Math.round(item.price * 100),
-          },
-          quantity: item.quantity,
-        };
+            price_data: {
+              currency: 'usd',
+              product_data: { 
+                name: item.name, 
+                images: [item.image]
+              },
+              unit_amount: Math.round(item.price * 100),
+            },
+            quantity: item.quantity,
+          };
       });
   
   
@@ -55,8 +56,6 @@ router.post('/', async (req, res) => {
             quantity: product.quantity,
             price: product.price,
           }));
-
-        console.log(orders)
   
         user.orders.push(...orders);
         await user.save();

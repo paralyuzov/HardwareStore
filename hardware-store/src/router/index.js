@@ -34,6 +34,8 @@ import ProfilePage from '@/views/ProfilePage.vue'
 import AdminUsersPage from '@/views/admin/AdminUsersPage.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 import SearchPage from '@/views/SearchPage.vue'
+import PaymentSuccess from '@/views/PaymentSuccess.vue'
+import PaymentCancel from '@/views/PaymentCancel.vue'
 
 const routes = [
   {
@@ -75,9 +77,20 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: SearchPage,
+    meta: { requiresAuth: false },
+  },
+  {
+    path: '/payment-success',
+    name: 'PaymentSuccess',
+    component: PaymentSuccess,
     meta: { requiresAuth: true },
   },
-
+  {
+    path: '/payment-cancel',
+    name: 'PaymentCancel',
+    component: PaymentCancel,
+    meta: { requiresAuth: true },
+  },
 
   {
     path: '/catalog',

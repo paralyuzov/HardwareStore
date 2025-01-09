@@ -43,7 +43,7 @@ export default {
         v-if="image"
         :src="image"
         :alt="name"
-        class="w-52 object-fit"
+        class="w-52 object-fit p-2"
       />
     </div>
     <div class="p-4 flex flex-col items-center">

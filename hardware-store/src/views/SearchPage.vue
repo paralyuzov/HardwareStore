@@ -50,7 +50,7 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-6 py-12 bg-white">
+  <div class="mx-auto px-6 py-12 bg-white">
     <h1 class="text-2xl font-bold mb-6 text-center font-orbitron">Search Results</h1>
     <div v-if="products.length === 0" class="text-center text-gray-500">
       No products found.

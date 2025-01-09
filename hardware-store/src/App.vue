@@ -2,6 +2,8 @@
 import { ref, onBeforeMount } from 'vue';
 import { useAuthStore } from '@/stores/authStore';
 import NavBar from './components/NavBar.vue';
+import FooterComponent from './components/Footer.vue';
+
 
 const authStore = useAuthStore();
 const isInitialized = ref(false);
@@ -18,4 +20,5 @@ onBeforeMount(async () => {
     <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
   </div>
   <RouterView v-else />
+  <FooterComponent/>
 </template>

@@ -32,6 +32,8 @@ import CartPage from '@/views/CartPage.vue'
 import OrdersPage from '@/views/OrdersPage.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
 import AdminUsersPage from '@/views/admin/AdminUsersPage.vue'
+import PageNotFound from '@/views/PageNotFound.vue'
+import SearchPage from '@/views/SearchPage.vue'
 
 const routes = [
   {
@@ -69,6 +71,13 @@ const routes = [
     component: ProfilePage,
     meta: { requiresAuth: true },
   },
+  {
+    path: '/search',
+    name: 'Search',
+    component: SearchPage,
+    meta: { requiresAuth: true },
+  },
+
 
   {
     path: '/catalog',
@@ -159,6 +168,12 @@ const routes = [
       },
     ],
   },
+
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'PageNotFound',
+    component: PageNotFound,
+  }
 ]
 
 const router = createRouter({

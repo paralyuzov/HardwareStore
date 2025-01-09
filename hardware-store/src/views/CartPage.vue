@@ -56,7 +56,7 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-6 py-12 bg-white text-center min-h-screen">
+  <div class="mx-auto px-6 py-12 bg-white text-center min-h-screen">
     <h1 class="text-4xl font-bold text-gray-800 mb-8">CART</h1>
 
     <div v-if="cartItems.length === 0" class="text-center text-gray-500">

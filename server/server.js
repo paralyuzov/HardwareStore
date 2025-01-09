@@ -14,6 +14,7 @@ const psuRoutes = require('./routes/psu');
 const laptopRoutes = require('./routes/laptops');
 const paymentRoute = require('./routes/stripe');
 const usersRoute = require('./routes/users');
+const searchRoute = require('./routes/search');
 
 
 dotenv.config();
@@ -45,6 +46,7 @@ app.use('/api/psu',psuRoutes);
 app.use('/api/laptops',laptopRoutes);
 app.use('/api/checkout',paymentRoute);
 app.use('/api/users',usersRoute)
+app.use('/api/search',searchRoute)
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -71,7 +71,7 @@ export default {
       <div
         v-for="category in categories"
         :key="category.id"
-        class="category-card bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform"
+        class="category-card bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform cursor-pointer"
         @click="navigateToCategory(category.route)"
       >
         <img

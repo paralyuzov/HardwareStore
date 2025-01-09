@@ -1,0 +1,170 @@
+[{
+  "_id": {
+    "$oid": "677983a6568eaac5043da793"
+  },
+  "name": "Corsair Vengeance DDR5 32GB",
+  "type": "DDR5",
+  "capacity": "32GB",
+  "speed": "5200MHz",
+  "latency": "CL36",
+  "voltage": "1.25V",
+  "image": "https://desktop.bg/system/images/425288/original/32gb_2x16gb_ddr5_6000mhz_corsair_vengeance_rgb_black.png",
+  "createdAt": {
+    "$date": "2025-01-04T18:53:26.974Z"
+  },
+  "__v": 0,
+  "price": 189.99
+},
+{
+  "_id": {
+    "$oid": "677983f5568eaac5043da795"
+  },
+  "name": "G.Skill Trident Z5 RGB DDR5 16GB",
+  "type": "DDR5",
+  "capacity": "16GB",
+  "speed": "6000MHz",
+  "latency": "CL32",
+  "voltage": "1.35V",
+  "image": "https://www.gskill.com/_upload/images/2208301446060.png",
+  "createdAt": {
+    "$date": "2025-01-04T18:54:45.567Z"
+  },
+  "__v": 0,
+  "price": 159.99
+},
+{
+  "_id": {
+    "$oid": "67798425568eaac5043da797"
+  },
+  "name": "Kingston Fury Beast DDR5 64GB",
+  "type": "DDR5",
+  "capacity": "64GB",
+  "speed": "4800MHz",
+  "latency": "CL40",
+  "voltage": "1.1V",
+  "image": "https://desktop.bg/system/images/390154/normal/64gb_2x32gb_ddr5_5200_mts_kingston_fury_beast_rgb_cl36.jpg",
+  "createdAt": {
+    "$date": "2025-01-04T18:55:33.876Z"
+  },
+  "__v": 0,
+  "price": 429.99
+},
+{
+  "_id": {
+    "$oid": "67798461568eaac5043da799"
+  },
+  "name": "Patriot Viper Venom DDR5 32GB",
+  "type": "DDR5",
+  "capacity": "32GB",
+  "speed": "5600MHz",
+  "latency": "CL38",
+  "voltage": "1.3V",
+  "image": "https://s13emagst.akamaized.net/products/57840/57839481/images/res_02905f3c707bb3e9d12c473878e4768c.png",
+  "createdAt": {
+    "$date": "2025-01-04T18:56:33.306Z"
+  },
+  "__v": 0,
+  "price": 199.99
+},
+{
+  "_id": {
+    "$oid": "6779848d568eaac5043da79b"
+  },
+  "name": "Team T-Force Delta RGB DDR5 16GB",
+  "type": "DDR5",
+  "capacity": "16GB",
+  "speed": "6000MHz",
+  "latency": "CL30",
+  "voltage": "1.4V",
+  "image": "https://www.vali.bg/UserFiles/Product/gallery_1/dual-01.jpg",
+  "createdAt": {
+    "$date": "2025-01-04T18:57:17.118Z"
+  },
+  "__v": 0,
+  "price": 174.99
+},
+{
+  "_id": {
+    "$oid": "677984b6568eaac5043da79d"
+  },
+  "name": "Corsair Vengeance DDR4 16GB",
+  "type": "DDR4",
+  "capacity": "16GB",
+  "speed": "3200MHz",
+  "latency": "CL16",
+  "voltage": "1.35V",
+  "image": "https://img-cdn.heureka.group/v1/8d285206-948a-4997-af57-a570a0a922cd.jpg",
+  "createdAt": {
+    "$date": "2025-01-04T18:57:58.005Z"
+  },
+  "__v": 0,
+  "price": 79.99
+},
+{
+  "_id": {
+    "$oid": "677984df568eaac5043da79f"
+  },
+  "name": "G.Skill Ripjaws V DDR4 32GB",
+  "type": "DDR4",
+  "capacity": "32GB",
+  "speed": "3600MHz",
+  "latency": "CL18",
+  "voltage": "1.35V",
+  "image": "https://www.desktop.bg/system/images/369691/normal/32gb_2x16gb_ddr4_32600mhz_gskill_ripjaws_v_black.png",
+  "createdAt": {
+    "$date": "2025-01-04T18:58:39.296Z"
+  },
+  "__v": 0,
+  "price": 149.99
+},
+{
+  "_id": {
+    "$oid": "67798501568eaac5043da7a1"
+  },
+  "name": "Kingston HyperX Fury DDR4 8GB",
+  "type": "DDR4",
+  "capacity": "8GB",
+  "speed": "2400MHz",
+  "latency": "CL15",
+  "voltage": "1.2V",
+  "image": "https://desktop.bg/system/images/170206/normal/8gb_ddr4_3200mhz_kingston_hyperx_fury.jpg",
+  "createdAt": {
+    "$date": "2025-01-04T18:59:13.851Z"
+  },
+  "__v": 0,
+  "price": 39.99
+},
+{
+  "_id": {
+    "$oid": "6779853a568eaac5043da7a3"
+  },
+  "name": "Patriot Viper Elite DDR4 16GB",
+  "type": "DDR4",
+  "capacity": "16GB",
+  "speed": "3000MHz",
+  "latency": "CL16",
+  "voltage": "1.2V",
+  "image": "https://thinkcomputers.org/wp-content/uploads/2021/08/patriot-viper-elite-ii-4.jpg",
+  "createdAt": {
+    "$date": "2025-01-04T19:00:10.918Z"
+  },
+  "__v": 0,
+  "price": 69.99
+},
+{
+  "_id": {
+    "$oid": "67798568568eaac5043da7a5"
+  },
+  "name": "Team T-Force Dark Z DDR4 32GB",
+  "type": "DDR4",
+  "capacity": "32GB",
+  "speed": "3600MHz",
+  "latency": "CL18",
+  "voltage": "1.35V",
+  "image": "https://desktop.bg/system/images/259054/normal/32gb_2x16gb_ddr4_3200mhz_team_group_tforce_dark_z_gray.jpg",
+  "createdAt": {
+    "$date": "2025-01-04T19:00:56.296Z"
+  },
+  "__v": 0,
+  "price": 139.99
+}]

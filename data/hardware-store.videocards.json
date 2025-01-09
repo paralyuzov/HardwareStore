@@ -1,0 +1,160 @@
+[{
+  "_id": {
+    "$oid": "677adf3aa703eadfc601b65f"
+  },
+  "name": "NVIDIA GeForce RTX 4090",
+  "brand": "NVIDIA",
+  "memory": "24GB GDDR6X",
+  "core_clock": "2230 MHz",
+  "boost_clock": "2520 MHz",
+  "price": 1599.99,
+  "image": "https://s13emagst.akamaized.net/products/49569/49568945/images/res_1eb486477f82efeeebfc3d187f35b819.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:36:26.991Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677adff0a703eadfc601b663"
+  },
+  "name": "NVIDIA GeForce RTX 4080",
+  "brand": "NVIDIA",
+  "memory": "16GB GDDR6X",
+  "core_clock": "2205 MHz",
+  "boost_clock": "2505 MHz",
+  "price": 1199.99,
+  "image": "https://desktop.bg/system/images/446952/original/msi_geforce_rtx_4080_super_16g_gaming_x_slim.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:39:28.695Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae034a703eadfc601b667"
+  },
+  "name": "AMD Radeon RX 7900 XTX",
+  "brand": "AMD",
+  "memory": "24GB GDDR6",
+  "core_clock": "1855 MHz",
+  "boost_clock": "2499 MHz",
+  "price": 999.99,
+  "image": "https://www.asrock.com/Graphics-Card/photo/Radeon%20RX%207900%20XTX%20Taichi%2024GB%20OC(M1).png",
+  "createdAt": {
+    "$date": "2025-01-05T19:40:36.007Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae06ba703eadfc601b66d"
+  },
+  "name": "AMD Radeon RX 7900 XT",
+  "brand": "AMD",
+  "memory": "20GB GDDR6",
+  "core_clock": "2000 MHz",
+  "boost_clock": "2400 MHz",
+  "price": 899.99,
+  "image": "https://desktop.bg/system/images/436492/original/asrock_amd_radeon_rx_7900_xt_phantom_gaming_white_oc_20gb.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:41:31.566Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae095a703eadfc601b671"
+  },
+  "name": "NVIDIA GeForce RTX 4070 Ti",
+  "brand": "NVIDIA",
+  "memory": "12GB GDDR6X",
+  "core_clock": "2310 MHz",
+  "boost_clock": "2610 MHz",
+  "price": 799.99,
+  "image": "https://desktop.bg/system/images/428241/double/msi_geforce_rtx_4070_ti_gaming_x_slim_12g.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:42:13.673Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae0b5a703eadfc601b675"
+  },
+  "name": "AMD Radeon RX 6800 XT",
+  "brand": "AMD",
+  "memory": "16GB GDDR6",
+  "core_clock": "1825 MHz",
+  "boost_clock": "2250 MHz",
+  "price": 649.99,
+  "image": "https://desktop.bg/system/images/269559/original/msi_radeon_rx_6800_xt_gaming_trio.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:42:45.622Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae0e6a703eadfc601b677"
+  },
+  "name": "NVIDIA GeForce RTX 3060 Ti",
+  "brand": "NVIDIA",
+  "memory": "8GB GDDR6",
+  "core_clock": "1410 MHz",
+  "boost_clock": "1665 MHz",
+  "price": 399.99,
+  "image": "https://desktop.bg/system/images/300318/original/asus_tuf_gaming_geforce_rtx_3060_ti_v2_oc.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:43:34.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae22da703eadfc601b679"
+  },
+  "name": "AMD Radeon RX 6700 XT",
+  "brand": "AMD",
+  "memory": "12GB GDDR6",
+  "core_clock": "2321 MHz",
+  "boost_clock": "2581 MHz",
+  "price": 479.99,
+  "image": "https://desktop.bg/system/images/441321/normal/asrock_radeon_rx_6700_xt_challenger_d_12gb.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:49:01.169Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae24aa703eadfc601b67b"
+  },
+  "name": "NVIDIA GeForce GTX 1660 Super",
+  "brand": "NVIDIA",
+  "memory": "6GB GDDR6",
+  "core_clock": "1530 MHz",
+  "boost_clock": "1785 MHz",
+  "price": 229.99,
+  "image": "https://desktop.bg/system/images/247571/double/asus_dual_geforce_gtx_1660_super_advanced_edition_evo.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:49:30.139Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677ae267a703eadfc601b67d"
+  },
+  "name": "AMD Radeon RX 580",
+  "brand": "AMD",
+  "memory": "8GB GDDR5",
+  "core_clock": "1257 MHz",
+  "boost_clock": "1340 MHz",
+  "price": 179.99,
+  "image": "https://desktop.bg/system/images/156538/double/msi_radeon_rx_580_gaming_8g.png",
+  "createdAt": {
+    "$date": "2025-01-05T19:49:59.864Z"
+  },
+  "__v": 0
+}]

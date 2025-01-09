@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "677baf406d1d1eb6e401c0e8"
+  },
+  "name": "Apple MacBook Pro 16",
+  "brand": "Apple",
+  "processor": "Apple M2 Pro",
+  "ram": "16GB",
+  "storage": "512GB SSD",
+  "graphics": "Apple GPU (16-core)",
+  "screen": "16.2-inch Retina Display",
+  "price": 2499.99,
+  "image": "https://macfinder.co.uk/wp-content/uploads/2023/03/img-MacBook-Pro-Retina-16-Inch-97612.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:24:00.232Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677baf5f6d1d1eb6e401c0ea"
+  },
+  "name": "Dell XPS 13",
+  "brand": "Dell",
+  "processor": "Intel Core i7-1260P",
+  "ram": "16GB",
+  "storage": "512GB SSD",
+  "graphics": "Intel Iris Xe Graphics",
+  "screen": "13.4-inch FHD+ InfinityEdge Display",
+  "price": 1399.99,
+  "image": "https://mydell.bg/wp-content/uploads/2024/08/1724948531-1.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:24:31.578Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677baf856d1d1eb6e401c0ec"
+  },
+  "name": "HP Spectre x360 14",
+  "brand": "HP",
+  "processor": "Intel Core i7-1255U",
+  "ram": "16GB",
+  "storage": "1TB SSD",
+  "graphics": "Intel Iris Xe Graphics",
+  "screen": "13.5-inch OLED Touchscreen",
+  "price": 1599.99,
+  "image": "https://ardes.bg/uploads/original/hp-spectre-x360-14-ef2000-542723.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:25:09.221Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677bafae6d1d1eb6e401c0ee"
+  },
+  "name": "ASUS ROG Zephyrus G14",
+  "brand": "ASUS",
+  "processor": "AMD Ryzen 9 6900HS",
+  "ram": "16GB",
+  "storage": "1TB SSD",
+  "graphics": "NVIDIA GeForce RTX 3060",
+  "screen": "14-inch QHD 120Hz Display",
+  "price": 1799.99,
+  "image": "https://laptop.bg/system/images/244932/double/ROG_Zephyrus_G14.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:25:50.573Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677baff36d1d1eb6e401c0f0"
+  },
+  "name": "Lenovo ThinkPad X1 Carbon Gen 10",
+  "brand": "Lenovo",
+  "processor": "Intel Core i7-1260P",
+  "ram": "16GB",
+  "storage": "1TB SSD",
+  "graphics": "Intel Iris Xe Graphics",
+  "screen": "14-inch FHD+ Display",
+  "price": 1899.99,
+  "image": "https://m.media-amazon.com/images/I/51Jd7XAv9ZL.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:26:59.539Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677bb01f6d1d1eb6e401c0f2"
+  },
+  "name": "Razer Blade 15 Advanced",
+  "brand": "Razer",
+  "processor": "Intel Core i7-12800H",
+  "ram": "16GB",
+  "storage": "1TB SSD",
+  "graphics": "NVIDIA GeForce RTX 3070 Ti",
+  "screen": "15.6-inch QHD 240Hz Display",
+  "price": 2399.99,
+  "image": "https://cdn.ozone.bg/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/e/5a9f1ddc9d20c5525706eddb51ceac68/geyming-laptop-razer---blade-15-advanced-model--156---360hz--rtx3080ti-30.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:27:43.756Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677bb0466d1d1eb6e401c0f4"
+  },
+  "name": "Acer Predator Helios 300",
+  "brand": "Acer",
+  "processor": "Intel Core i7-12700H",
+  "ram": "16GB",
+  "storage": "512GB SSD",
+  "graphics": "NVIDIA GeForce RTX 3060",
+  "screen": "15.6-inch FHD 165Hz Display",
+  "price": 1599.99,
+  "image": "https://laptop.bg/system/images/140924/original/Predator_Helios_300.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:28:22.684Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677bb0626d1d1eb6e401c0f6"
+  },
+  "name": "MSI GS66 Stealth",
+  "brand": "MSI",
+  "processor": "Intel Core i9-12900H",
+  "ram": "32GB",
+  "storage": "1TB SSD",
+  "graphics": "NVIDIA GeForce RTX 3080 Ti",
+  "screen": "15.6-inch QHD 240Hz Display",
+  "price": 3499.99,
+  "image": "https://laptop.bg/system/product_landing_pages/laptop/1652/GS66-D1.png",
+  "createdAt": {
+    "$date": "2025-01-06T10:28:50.010Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677bb0876d1d1eb6e401c0f8"
+  },
+  "name": "Gigabyte Aorus 15P",
+  "brand": "Gigabyte",
+  "processor": "Intel Core i7-12700H",
+  "ram": "16GB",
+  "storage": "1TB SSD",
+  "graphics": "NVIDIA GeForce RTX 3070",
+  "screen": "15.6-inch FHD 360Hz Display",
+  "price": 2199.99,
+  "image": "https://pcbuild.bg/assets/products/000/000/147/000000147120--laptop-gigabyte-aorus-15p-yd-74ee244sh.png",
+  "createdAt": {
+    "$date": "2025-01-06T10:29:27.241Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677bb0a66d1d1eb6e401c0fa"
+  },
+  "name": "Microsoft Surface Laptop Studio",
+  "brand": "Microsoft",
+  "processor": "Intel Core i7-11370H",
+  "ram": "32GB",
+  "storage": "1TB SSD",
+  "graphics": "NVIDIA GeForce RTX 3050 Ti",
+  "screen": "14.4-inch PixelSense Flow Display",
+  "price": 2699.99,
+  "image": "https://gfx3.senetic.com/akeneo-catalog/f/0/7/7/f077748ef7ad7f58aef1d5f19fe158ce14a1ff9b_1677698_ADI_00034_image2.jpg",
+  "createdAt": {
+    "$date": "2025-01-06T10:29:58.015Z"
+  },
+  "__v": 0
+}]

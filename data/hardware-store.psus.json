@@ -1,0 +1,160 @@
+[{
+  "_id": {
+    "$oid": "677aedcecf2457a384fa1085"
+  },
+  "name": "Corsair RM750x",
+  "brand": "Corsair",
+  "wattage": "750W",
+  "efficiency": "80 PLUS Gold",
+  "modularity": "Fully Modular",
+  "price": 129.99,
+  "image": "https://desktop.bg/system/images/293916/original/corsair_rmx_series_rm750x_80_plus_gold_fully_modular_atx_psu.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T20:38:38.524Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aedfccf2457a384fa1088"
+  },
+  "name": "Seasonic Focus GX-850",
+  "brand": "Seasonic",
+  "wattage": "850W",
+  "efficiency": "80 PLUS Gold",
+  "modularity": "Fully Modular",
+  "price": 139.99,
+  "image": "https://desktop.bg/system/images/487238/original/seasonic_focus_gx850_v4_atx_31.png",
+  "createdAt": {
+    "$date": "2025-01-05T20:39:24.313Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aee2dcf2457a384fa108a"
+  },
+  "name": "EVGA SuperNOVA 1000 G6",
+  "brand": "EVGA",
+  "wattage": "1000W",
+  "efficiency": "80 PLUS Gold",
+  "modularity": "Fully Modular",
+  "price": 199.99,
+  "image": "https://images.evga.com/products/gallery/png/220-G6-1000-X1_XL_1.png",
+  "createdAt": {
+    "$date": "2025-01-05T20:40:13.959Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aee5fcf2457a384fa108e"
+  },
+  "name": "Cooler Master V850 SFX Gold",
+  "brand": "Cooler Master",
+  "wattage": "850W",
+  "efficiency": "80 PLUS Gold",
+  "modularity": "Fully Modular",
+  "price": 159.99,
+  "image": "https://files.coolermaster.com/og-image/v850-sfx-gold-1200x630.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T20:41:03.865Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aee81cf2457a384fa1090"
+  },
+  "name": "Thermaltake Toughpower GF1 650W",
+  "brand": "Thermaltake",
+  "wattage": "650W",
+  "efficiency": "80 PLUS Gold",
+  "modularity": "Fully Modular",
+  "price": 119.99,
+  "image": "https://desktop.bg/system/images/462330/normal/thermaltake_toughpower_gf1_650w_tt_premium_edition.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T20:41:37.195Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aeeabcf2457a384fa1092"
+  },
+  "name": "Be Quiet! Straight Power 11 750W",
+  "brand": "Be Quiet!",
+  "wattage": "750W",
+  "efficiency": "80 PLUS Platinum",
+  "modularity": "Semi-Modular",
+  "price": 159.99,
+  "image": "https://ardes.bg/uploads/original/be-quiet-straight-power-11-750w-80-plus-gold-silen-183088.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T20:42:19.931Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aeed3cf2457a384fa1094"
+  },
+  "name": "NZXT C650",
+  "brand": "NZXT",
+  "wattage": "650W",
+  "efficiency": "80 PLUS Bronze",
+  "modularity": "Fully Modular",
+  "price": 99.99,
+  "image": "https://ardes.bg/uploads/original/zahranvasht-blok-nzxt-c650-650w-80-gold-full-modul-334347.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T20:42:59.782Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aeefacf2457a384fa1096"
+  },
+  "name": "Gigabyte P850GM",
+  "brand": "Gigabyte",
+  "wattage": "850W",
+  "efficiency": "80 PLUS Gold",
+  "modularity": "Fully Modular",
+  "price": 129.99,
+  "image": "https://gfx3.senetic.com/akeneo-catalog/d/6/8/f/d68f624278a1ba48cfcbac130b4050e6a99c6920_1627581_GP_P850GM_image7.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T20:43:38.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aef22cf2457a384fa1098"
+  },
+  "name": "SilverStone SX700-G",
+  "brand": "SilverStone",
+  "wattage": "700W",
+  "efficiency": "80 PLUS Gold",
+  "modularity": "Fully Modular",
+  "price": 149.99,
+  "image": "https://m.media-amazon.com/images/I/81Dmxyv4RcL.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T20:44:18.245Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677aef85cf2457a384fa109a"
+  },
+  "name": "ASUS ROG Thor 1200W Platinum II",
+  "brand": "ASUS",
+  "wattage": "1200W",
+  "efficiency": "80 PLUS Platinum",
+  "modularity": "Fully Modular",
+  "price": 399.99,
+  "image": "https://pcbuild.bg/assets/products/000/000/246/000000246026-listing--zahranvane-asus-rog-thor-1200w-platinum-ii-80-plus-platinum-pcie-5-0-ready.webp",
+  "createdAt": {
+    "$date": "2025-01-05T20:45:57.522Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,170 @@
+[{
+  "_id": {
+    "$oid": "677a76b5a7513b8e2827caec"
+  },
+  "name": "Samsung 980 PRO",
+  "capacity": "1TB",
+  "type": "NVMe",
+  "interface": "PCIe 4.0",
+  "read_speed": "7000 MB/s",
+  "write_speed": "5000 MB/s",
+  "price": 128.99,
+  "image": "https://www.kamea.biz/laptopremont.com/images/7099-4020.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T12:10:29.607Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a770aa7513b8e2827caee"
+  },
+  "name": "Western Digital Black SN850X",
+  "capacity": "2TB",
+  "type": "NVMe",
+  "interface": "PCIe 4.0",
+  "read_speed": "7300 MB/s",
+  "write_speed": "6600 MB/s",
+  "price": 249.99,
+  "image": "https://img-cdn.heureka.group/v1/0255888d-9e13-4e99-a94a-7d490fe73acf.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T12:11:54.851Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a772fa7513b8e2827caf0"
+  },
+  "name": "Crucial P5 Plus",
+  "capacity": "500GB",
+  "type": "NVMe",
+  "interface": "PCIe 4.0",
+  "read_speed": "6600 MB/s",
+  "write_speed": "5000 MB/s",
+  "price": 64.99,
+  "image": "https://desktop.bg/system/images/304846/normal/500gb_crucial_p5_plus_pcie_m2.png",
+  "createdAt": {
+    "$date": "2025-01-05T12:12:31.360Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a7753a7513b8e2827caf2"
+  },
+  "name": "Kingston KC3000",
+  "capacity": "1TB",
+  "type": "NVMe",
+  "interface": "PCIe 4.0",
+  "read_speed": "7000 MB/s",
+  "write_speed": "7000 MB/s",
+  "price": 119.99,
+  "image": "https://desktop.bg/system/images/314925/original/1tb_kingston_kc3000_m2_pcie_40_nvme.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T12:13:07.644Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a7774a7513b8e2827caf4"
+  },
+  "name": "Seagate FireCuda 530",
+  "capacity": "2TB",
+  "type": "NVMe",
+  "interface": "PCIe 4.0",
+  "read_speed": "7300 MB/s",
+  "write_speed": "6900 MB/s",
+  "price": 279.99,
+  "image": "https://ardes.bg/uploads/original/1tb-ssd-seagate-firecuda-530-359884.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T12:13:40.555Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a77eda7513b8e2827caf6"
+  },
+  "name": "ADATA XPG GAMMIX S70 Blade",
+  "capacity": "1TB",
+  "type": "NVMe",
+  "interface": "PCIe 4.0",
+  "read_speed": "7400 MB/s",
+  "write_speed": "6400 MB/s",
+  "price": 99.99,
+  "image": "https://aphnetworks.com/review/xpg-gammix-s70-blade-1tb/005.JPG",
+  "createdAt": {
+    "$date": "2025-01-05T12:15:41.101Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a781ba7513b8e2827caf8"
+  },
+  "name": "Samsung 870 EVO",
+  "capacity": "1TB",
+  "type": "SATA",
+  "interface": "SATA III",
+  "read_speed": "560 MB/s",
+  "write_speed": "530 MB/s",
+  "price": 79.99,
+  "image": "https://img-cdn.heureka.group/v1/a5df6052-9022-575b-b221-30d72ecaafd5.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T12:16:27.939Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a783da7513b8e2827cafa"
+  },
+  "name": "Crucial MX500",
+  "capacity": "2TB",
+  "type": "SATA",
+  "interface": "SATA III",
+  "read_speed": "560 MB/s",
+  "write_speed": "510 MB/s",
+  "price": 189.99,
+  "image": "https://desktop.bg/system/images/167594/double/CT500MX500SSD1.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T12:17:01.406Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a7867a7513b8e2827cafc"
+  },
+  "name": "Western Digital Blue 3D NAND",
+  "capacity": "500GB",
+  "type": "SATA",
+  "interface": "SATA III",
+  "read_speed": "545 MB/s",
+  "write_speed": "525 MB/s",
+  "price": 39.99,
+  "image": "https://www.westerndigital.com/content/dam/store/en-us/assets/products/internal-storage/wd-blue-3d-nand-sata-ssd/gallery/250gb/wd-blue-3d-nand-sata-ssd-250gb-front.png",
+  "createdAt": {
+    "$date": "2025-01-05T12:17:43.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a7893a7513b8e2827cafe"
+  },
+  "name": "SanDisk Ultra 3D",
+  "capacity": "1TB",
+  "type": "SATA",
+  "interface": "SATA III",
+  "read_speed": "560 MB/s",
+  "write_speed": "530 MB/s",
+  "price": 89.99,
+  "image": "https://ardes.bg/uploads/original/solid-state-drive-ssd-sandisk-ultra-reg-3d-2-5-quo-179827.jpg",
+  "createdAt": {
+    "$date": "2025-01-05T12:18:27.199Z"
+  },
+  "__v": 0
+}]

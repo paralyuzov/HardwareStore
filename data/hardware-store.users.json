@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "678001cf6393ba4d2e0063bf"
+  },
+  "username": "Admin",
+  "email": "admin@gmail.com",
+  "password": "$2b$10$0xEk6ij4KFY.a3pJXJ5ECeBlktbFeCRU8uKvsWcpCqdJ23pNwZ5Ne",
+  "roles": [
+    "admin"
+  ],
+  "orders": [
+    {
+      "productId": {
+        "$oid": "677aee2dcf2457a384fa108a"
+      },
+      "productName": "EVGA SuperNOVA 1000 G6",
+      "quantity": 1,
+      "price": 199.99,
+      "_id": {
+        "$oid": "678003fd6393ba4d2e0063f8"
+      },
+      "purchaseDate": {
+        "$date": "2025-01-09T17:14:37.007Z"
+      }
+    },
+    {
+      "productId": {
+        "$oid": "677984df568eaac5043da79f"
+      },
+      "productName": "G.Skill Ripjaws V DDR4 32GB",
+      "quantity": 1,
+      "price": 149.99,
+      "_id": {
+        "$oid": "678003fd6393ba4d2e0063f9"
+      },
+      "purchaseDate": {
+        "$date": "2025-01-09T17:14:37.007Z"
+      }
+    }
+  ],
+  "__v": 1
+}]

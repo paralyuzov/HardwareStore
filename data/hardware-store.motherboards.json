@@ -1,0 +1,170 @@
+[{
+  "_id": {
+    "$oid": "677a6afd231dbb260da10058"
+  },
+  "name": "ASUS ROG Crosshair VIII Hero",
+  "chipset": "X570",
+  "socket": "AM4",
+  "form_factor": "ATX",
+  "ram_support": "DDR4, up to 128GB",
+  "price": 398.99,
+  "image": "https://desktop.bg/system/images/256602/double/asus_rog_crosshair_viii_hero_x570_wifi_6.png",
+  "brand": "AMD",
+  "createdAt": {
+    "$date": "2025-01-05T11:20:29.808Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6b2d231dbb260da1005a"
+  },
+  "name": "MSI MPG B550 Gaming Edge WiFi",
+  "chipset": "B550",
+  "socket": "AM4",
+  "form_factor": "ATX",
+  "ram_support": "DDR4, up to 128GB",
+  "price": 199.99,
+  "image": "https://desktop.bg/system/images/269398/double/msi_mpg_b550_gaming_edge_wifi.png",
+  "brand": "AMD",
+  "createdAt": {
+    "$date": "2025-01-05T11:21:17.148Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6b53231dbb260da1005c"
+  },
+  "name": "Gigabyte Aorus X570 Master",
+  "chipset": "X570",
+  "socket": "AM4",
+  "form_factor": "ATX",
+  "ram_support": "DDR4, up to 128GB",
+  "price": 349.99,
+  "image": "https://desktop.bg/system/images/335759/original/gigabyte_x570s_aorus_master.png",
+  "brand": "AMD",
+  "createdAt": {
+    "$date": "2025-01-05T11:21:55.649Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6b76231dbb260da1005e"
+  },
+  "name": "ASRock B450M Pro4",
+  "chipset": "B450",
+  "socket": "AM4",
+  "form_factor": "Micro ATX",
+  "ram_support": "DDR4, up to 64GB",
+  "price": 89.99,
+  "image": "https://desktop.bg/system/images/257101/normal/asrock_b450m_pro4f.png",
+  "brand": "AMD",
+  "createdAt": {
+    "$date": "2025-01-05T11:22:30.992Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6ba5231dbb260da10060"
+  },
+  "name": "MSI MAG X670E Tomahawk",
+  "chipset": "X670E",
+  "socket": "AM5",
+  "form_factor": "ATX",
+  "ram_support": "DDR5, up to 128GB",
+  "price": 279.99,
+  "image": "https://desktop.bg/system/images/419632/double/msi_mag_x670e_tomahawk_wifi.png",
+  "brand": "AMD",
+  "createdAt": {
+    "$date": "2025-01-05T11:23:17.247Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6bd7231dbb260da10062"
+  },
+  "name": "ASUS ROG Strix Z690-E Gaming WiFi",
+  "chipset": "Z690",
+  "socket": "LGA 1700",
+  "form_factor": "ATX",
+  "ram_support": "DDR5, up to 128GB",
+  "price": 449.99,
+  "image": "https://desktop.bg/system/images/311717/normal/asus_rog_strix_z690f_gaming_wifi.png",
+  "brand": "Intel",
+  "createdAt": {
+    "$date": "2025-01-05T11:24:07.005Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6bf6231dbb260da10064"
+  },
+  "name": "MSI MAG Z790 Tomahawk WiFi",
+  "chipset": "Z790",
+  "socket": "LGA 1700",
+  "form_factor": "ATX",
+  "ram_support": "DDR5, up to 128GB",
+  "price": 299.99,
+  "image": "https://desktop.bg/system/images/381210/original/msi_mag_z790_tomahawk_wifi.png",
+  "brand": "Intel",
+  "createdAt": {
+    "$date": "2025-01-05T11:24:38.335Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6c10231dbb260da10066"
+  },
+  "name": "Gigabyte B560M Aorus Pro",
+  "chipset": "B560",
+  "socket": "LGA 1200",
+  "form_factor": "Micro ATX",
+  "ram_support": "DDR4, up to 64GB",
+  "price": 149.99,
+  "image": "https://desktop.bg/system/images/301684/original/gigabyte_aorus_b560m_pro_ax.png",
+  "brand": "Intel",
+  "createdAt": {
+    "$date": "2025-01-05T11:25:04.432Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6c3d231dbb260da10068"
+  },
+  "name": "ASRock Z590 Phantom Gaming 4",
+  "chipset": "Z590",
+  "socket": "LGA 1200",
+  "form_factor": "ATX",
+  "ram_support": "DDR4, up to 128GB",
+  "price": 179.99,
+  "image": "https://pg.asrock.com/mb/photo/Z590%20Phantom%20Gaming%204(L1).png",
+  "brand": "Intel",
+  "createdAt": {
+    "$date": "2025-01-05T11:25:49.979Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "677a6c6e231dbb260da1006a"
+  },
+  "name": "Intel Desktop Board DH67BL",
+  "chipset": "H67",
+  "socket": "LGA 1155",
+  "form_factor": "Micro ATX",
+  "ram_support": "DDR3, up to 16GB",
+  "price": 69.99,
+  "image": "https://p.jarcomputers.com/680x680/e7/MBINTELBLKDH67BLB3_680x680.jpg",
+  "brand": "Intel",
+  "createdAt": {
+    "$date": "2025-01-05T11:26:38.436Z"
+  },
+  "__v": 0
+}]

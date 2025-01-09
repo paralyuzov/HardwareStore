@@ -26,7 +26,7 @@ export default {
     const localUserData = ref({ ...props.userData });
     const validationErrors = ref({});
 
-    const excludedFields = ["_id", "createdAt", "__v", "orders"];
+    const excludedFields = ["_id", "createdAt", "__v", "orders","password"];
 
     const filteredUserData = computed(() => {
       return Object.keys(localUserData.value)

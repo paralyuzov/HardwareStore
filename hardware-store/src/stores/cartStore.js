@@ -55,7 +55,7 @@ export const useCartStore = defineStore('cartStore', {
           items,
           userId,
         })
-
+        this.clearCart()
         if (!response.data.id) {
           throw new Error('Failed to create checkout session.')
         }
@@ -68,7 +68,6 @@ export const useCartStore = defineStore('cartStore', {
           console.error('Stripe Checkout Error:', result.error.message)
           alert('Failed to redirect to payment. Please try again.')
         }
-        this.clearCart()
       } catch (error) {
         console.error('Payment Error:', error.message || error.response?.data?.error)
         alert('An error occurred during payment. Please try again later.')

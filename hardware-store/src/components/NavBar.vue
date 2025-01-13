@@ -87,9 +87,9 @@ export default {
             <router-link v-if="isLoggedIn" to="/profile" class="block px-4 py-2 text-black rounded-2xl hover:bg-blue-500 hover:text-white">
               Profile
             </router-link>
-            <a v-else href="/login" class="block px-4 py-2 text-black hover:bg-blue-500 rounded-2xl hover:text-white">
+            <router-link v-else to="/login" class="block px-4 py-2 text-black hover:bg-blue-500 rounded-2xl hover:text-white">
               Login
-            </a>
+            </router-link>
             <button v-if="isLoggedIn" @click="handleLogout"
               class="block w-full text-left px-4 py-2 text-black hover:bg-blue-500 rounded-2xl hover:text-white">
               Logout
